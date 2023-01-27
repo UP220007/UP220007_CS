@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyecto6\bin\Debug\net7.0\proyecto6.exe
+C:\Users\range\Documents\vs code\c#\proyecto6\bin\Debug\net7.0\proyecto6.deps.json
+C:\Users\range\Documents\vs code\c#\proyecto6\bin\Debug\net7.0\proyecto6.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyecto6\bin\Debug\net7.0\proyecto6.dll
+C:\Users\range\Documents\vs code\c#\proyecto6\bin\Debug\net7.0\proyecto6.pdb
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.dll
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\refint\proyecto6.dll
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.pdb
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\proyecto6.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyecto6\obj\Debug\net7.0\ref\proyecto6.dll

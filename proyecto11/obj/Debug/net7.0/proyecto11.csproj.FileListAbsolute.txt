@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyecto11\bin\Debug\net7.0\proyecto11.exe
+C:\Users\range\Documents\vs code\c#\proyecto11\bin\Debug\net7.0\proyecto11.deps.json
+C:\Users\range\Documents\vs code\c#\proyecto11\bin\Debug\net7.0\proyecto11.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyecto11\bin\Debug\net7.0\proyecto11.dll
+C:\Users\range\Documents\vs code\c#\proyecto11\bin\Debug\net7.0\proyecto11.pdb
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.dll
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\refint\proyecto11.dll
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.pdb
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\proyecto11.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyecto11\obj\Debug\net7.0\ref\proyecto11.dll

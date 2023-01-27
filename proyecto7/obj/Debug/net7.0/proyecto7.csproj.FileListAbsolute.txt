@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyecto7\bin\Debug\net7.0\proyecto7.exe
+C:\Users\range\Documents\vs code\c#\proyecto7\bin\Debug\net7.0\proyecto7.deps.json
+C:\Users\range\Documents\vs code\c#\proyecto7\bin\Debug\net7.0\proyecto7.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyecto7\bin\Debug\net7.0\proyecto7.dll
+C:\Users\range\Documents\vs code\c#\proyecto7\bin\Debug\net7.0\proyecto7.pdb
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.dll
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\refint\proyecto7.dll
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.pdb
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\proyecto7.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyecto7\obj\Debug\net7.0\ref\proyecto7.dll

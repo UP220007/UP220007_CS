@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto17\bin\Debug\net7.0\proyecto17.exe
+C:\Users\range\Documents\vs code\c#\proyecto17\bin\Debug\net7.0\proyecto17.deps.json
+C:\Users\range\Documents\vs code\c#\proyecto17\bin\Debug\net7.0\proyecto17.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyecto17\bin\Debug\net7.0\proyecto17.dll
+C:\Users\range\Documents\vs code\c#\proyecto17\bin\Debug\net7.0\proyecto17.pdb
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.dll
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\refint\proyecto17.dll
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.pdb
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\proyecto17.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyecto17\obj\Debug\net7.0\ref\proyecto17.dll

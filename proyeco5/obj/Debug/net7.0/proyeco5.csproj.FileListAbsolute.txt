@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyeco5\bin\Debug\net7.0\proyeco5.exe
+C:\Users\range\Documents\vs code\c#\proyeco5\bin\Debug\net7.0\proyeco5.deps.json
+C:\Users\range\Documents\vs code\c#\proyeco5\bin\Debug\net7.0\proyeco5.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyeco5\bin\Debug\net7.0\proyeco5.dll
+C:\Users\range\Documents\vs code\c#\proyeco5\bin\Debug\net7.0\proyeco5.pdb
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.dll
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\refint\proyeco5.dll
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.pdb
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\proyeco5.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyeco5\obj\Debug\net7.0\ref\proyeco5.dll

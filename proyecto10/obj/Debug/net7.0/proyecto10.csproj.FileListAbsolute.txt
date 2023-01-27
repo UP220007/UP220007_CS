@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto10\bin\Debug\net7.0\proyecto10.exe
+C:\Users\range\Documents\vs code\c#\proyecto10\bin\Debug\net7.0\proyecto10.deps.json
+C:\Users\range\Documents\vs code\c#\proyecto10\bin\Debug\net7.0\proyecto10.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyecto10\bin\Debug\net7.0\proyecto10.dll
+C:\Users\range\Documents\vs code\c#\proyecto10\bin\Debug\net7.0\proyecto10.pdb
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.dll
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\refint\proyecto10.dll
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.pdb
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\proyecto10.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyecto10\obj\Debug\net7.0\ref\proyecto10.dll

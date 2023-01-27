@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\c#\proyecto13\bin\Debug\net7.0\proyecto13.exe
+C:\Users\range\Documents\vs code\c#\proyecto13\bin\Debug\net7.0\proyecto13.deps.json
+C:\Users\range\Documents\vs code\c#\proyecto13\bin\Debug\net7.0\proyecto13.runtimeconfig.json
+C:\Users\range\Documents\vs code\c#\proyecto13\bin\Debug\net7.0\proyecto13.dll
+C:\Users\range\Documents\vs code\c#\proyecto13\bin\Debug\net7.0\proyecto13.pdb
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.dll
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\refint\proyecto13.dll
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.pdb
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\proyecto13.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\c#\proyecto13\obj\Debug\net7.0\ref\proyecto13.dll
