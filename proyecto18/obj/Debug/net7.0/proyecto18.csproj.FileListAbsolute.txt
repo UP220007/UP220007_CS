@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\bin\Debug\net7.0\proyecto18.exe
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\bin\Debug\net7.0\proyecto18.deps.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\bin\Debug\net7.0\proyecto18.runtimeconfig.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\bin\Debug\net7.0\proyecto18.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\bin\Debug\net7.0\proyecto18.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\refint\proyecto18.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\proyecto18.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto18\obj\Debug\net7.0\ref\proyecto18.dll

@@ -1,8 +1,8 @@
-﻿using System;
+﻿sing System;u
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+//matriz random llenada aleatoriamente sin repetir daros 
 namespace casting
 {
   class Program
@@ -16,7 +16,7 @@ namespace casting
       int[,] matrix = new int[4, 7];
 
       var random = new Random();
-      
+ 
 
       int aleatorio=0;
       while (c==1)
