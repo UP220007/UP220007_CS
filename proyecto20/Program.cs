@@ -16,6 +16,7 @@ namespace casting
       int n = 4;
       int m = 7;
       int game=0;
+      int pairs=0;
       int[,] matrix = new int[n, m];
       Random rand = new Random();
 
@@ -38,14 +39,25 @@ namespace casting
             }
           }
           game=2;
+          pairs =0;
         } while (game==1);
         while (game==2)
         {
           Console.WriteLine("aqui va eljuego");
           printmatrix(matrix,n,m);
-          string coordinates1=Console.ReadLine();
-          string coordinates2=Console.ReadLine();
-          verificar(matrix,coordinates1,coordinates2);
+          do
+          {
+            Console.WriteLine("coordenadas del onjetivo 1");
+            string coordinates1=Console.ReadLine();
+            Console.WriteLine("coordenadas del onjetivo 2");
+            string coordinates2=Console.ReadLine();
+            verificar(matrix,coordinates1,coordinates2);
+            if (verificar(matrix,coordinates1,coordinates2)==true)
+            {
+              pairs++;
+            }
+          } while (finish(pairs)==false);
+          
           game=3;
         }
         while (game==3)
@@ -99,7 +111,7 @@ namespace casting
         Console.WriteLine();
       }
     }
-    static void verificar (int[,] matrix,string coordinates1,string coordinates2){
+    static bool verificar (int[,] matrix,string coordinates1,string coordinates2){
       int coodenada1 = (int)char.GetNumericValue(coordinates1[coordinates1.IndexOf(",")-1])-1;
       int coodenada2 = (int)char.GetNumericValue(coordinates1[coordinates1.IndexOf(",")+1])-1;
       int coodenada3 = (int)char.GetNumericValue(coordinates2[coordinates2.IndexOf(",")-1])-1;
@@ -107,9 +119,19 @@ namespace casting
       if ((matrix[coodenada1,coodenada2] + matrix[coodenada3,coodenada4])==29)
       {
         Console.WriteLine("coincidencia");
-      }else if ((matrix[coodenada1,coodenada2]+matrix[coodenada3,coodenada4])!=29)
-      {
+        return true;
+      }else{
         Console.WriteLine("error");
+        return false;
+      }
+    }
+    static bool finish(int pairs){
+      if (pairs==29)
+      {
+        return true;
+      }else
+      {
+        return false;
       }
     }
   }
