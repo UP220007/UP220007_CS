@@ -53,8 +53,8 @@ namespace casting
             {
               do{
                 Console.WriteLine("coordenadas del onjetivo "+ (i+1)+" en forjato\"(x,y)\"");
-                //coordinates1[i]=Console.ReadLine();
-                coordinates1[i]=",,,,,";
+                coordinates1[i]=Console.ReadLine();
+                //coordinates1[i]=",,,,,";
                 //int a=1;
               } while (verificar_coordenadas(coordinates1[i])==false);
             }
@@ -218,7 +218,7 @@ namespace casting
       char b= coordenadas[coordenadas.IndexOf(",")+1];//desborde
       char c= coordenadas[0];
       char d= coordenadas[4];
-      Console.WriteLine(a+" "+b+" "+c+" "+d);
+      //Console.WriteLine(a+" "+b+" "+c+" "+d);
       if (char.IsDigit(a)&&char.IsDigit(b)&&c=='('&&d==')')
       {
         return true;
@@ -231,7 +231,7 @@ namespace casting
       int parentecis=0;
       int comas=0;
       int parentesis2=0;
-      for (int i = 0; i <= coordenadas.Length; i++)
+      for (int i = 0; i < coordenadas.Length; i++)
       {
         if (coordenadas[i]=='(')
         {
