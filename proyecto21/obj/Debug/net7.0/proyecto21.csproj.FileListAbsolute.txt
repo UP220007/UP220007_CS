@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\bin\Debug\net7.0\proyecto21.exe
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\bin\Debug\net7.0\proyecto21.deps.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\bin\Debug\net7.0\proyecto21.runtimeconfig.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\bin\Debug\net7.0\proyecto21.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\bin\Debug\net7.0\proyecto21.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\refint\proyecto21.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\proyecto21.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto21\obj\Debug\net7.0\ref\proyecto21.dll

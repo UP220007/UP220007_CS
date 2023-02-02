@@ -17,6 +17,8 @@ namespace casting
       int m = 7;
       int game=0;
       int pairs=0;
+      string [] coordinates1 = new string[2];
+      string coordinates2;
       int[,] matrix = new int[n, m];
       Random rand = new Random();
 
@@ -47,12 +49,22 @@ namespace casting
           printmatrix(matrix,n,m);
           do
           {
-            Console.WriteLine("coordenadas del onjetivo 1");
-            string coordinates1=Console.ReadLine();
-            Console.WriteLine("coordenadas del onjetivo 2");
-            string coordinates2=Console.ReadLine();
-            verificar(matrix,coordinates1,coordinates2);
-            if (verificar(matrix,coordinates1,coordinates2)==true)
+            for (int i = 0; i < 2; i++)
+            {
+              do{
+                Console.WriteLine("coordenadas del onjetivo "+ (i+1)+" en forjato\"(x,y)\"");
+                //coordinates1[i]=Console.ReadLine();
+                coordinates1[i]=",,,,,";
+                //int a=1;
+              } while (verificar_coordenadas(coordinates1[i])==false);
+            }
+            /*do
+            {
+              Console.WriteLine("coordenadas del onjetivo 2");
+              coordinates2=Console.ReadLine();
+            } while (verificar_coordenadas(coordinates2)==false);*/
+            verificar(matrix,coordinates1[0],coordinates1[1]);
+            if (verificar(matrix,coordinates1[0],coordinates1[1])==true)
             {
               pairs++;
             }
@@ -127,6 +139,112 @@ namespace casting
     }
     static bool finish(int pairs){
       if (pairs==29)
+      {
+        return true;
+      }else
+      {
+        return false;
+      }
+    }
+    static bool verificar_coordenadas(string coordinates1){
+      if (coordinates1.Length<5||coordinates1.Length>5||string.IsNullOrEmpty(coordinates1)==true)
+      {
+        return false;
+      }else
+      {
+        if (coordenadas_recorrer(coordinates1)==true)
+        {
+          if (verificador_repeticiones(coordinates1)==true)
+          {
+            if (verificar_formato(coordinates1) == false)
+            {
+              return false;
+            } else
+            {
+              return true;
+            } 
+          }else
+          {
+            return false;
+          }
+        }else
+        {
+          return false;
+        }
+      }
+    }
+    static bool coordenadas_recorrer(string coordinates1){
+      /*int contador =0;
+      string bloqueos = "qwertyuiopasdfghjklñzxcvbnm<.-{}+´¿'!#$%&/=?¡¨*[]:_;QWERTYUIOPASDFGHJKLÑZ>XCVBNM<^`~\"\\";
+      for (int i = 0; i <= coordinates1.Length; i++)
+      {
+        for (int j = 0; j <= bloqueos.Length; j++)
+        {
+          if (coordinates1[i]!=bloqueos[j])
+          {
+            contador++;
+          }
+        }
+      }
+      if (contador==coordinates1.Length)
+      {
+        return true;
+      }else
+      {
+        return false;
+      }*/
+      string input = "123,456(789)";
+      bool valid = true;
+      for (int i = 0; i < coordinates1.Length; i++)
+      {
+        char c = coordinates1[i];
+        if (!(char.IsDigit(c) || c == ',' || c == '(' || c == ')'))
+        {
+          valid = false;
+          break;
+        }
+      }
+      if (valid)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    static bool verificar_formato(string coordenadas){
+      char a= coordenadas[coordenadas.IndexOf(",")-1];
+      char b= coordenadas[coordenadas.IndexOf(",")+1];//desborde
+      char c= coordenadas[0];
+      char d= coordenadas[4];
+      Console.WriteLine(a+" "+b+" "+c+" "+d);
+      if (char.IsDigit(a)&&char.IsDigit(b)&&c=='('&&d==')')
+      {
+        return true;
+      }else
+      {
+        return false;
+      }
+    }
+    static bool verificador_repeticiones(string coordenadas){
+      int parentecis=0;
+      int comas=0;
+      int parentesis2=0;
+      for (int i = 0; i <= coordenadas.Length; i++)
+      {
+        if (coordenadas[i]=='(')
+        {
+          parentecis++;
+        } else if(coordenadas[i]==')')
+        {
+          parentesis2++;
+        }else if (coordenadas[i]==',')
+        {
+          comas++;
+        }
+      }
+      if (parentecis==1&&parentesis2==1&&comas==1)
       {
         return true;
       }else
