@@ -20,6 +20,9 @@ namespace casting
       string [] coordinates1 = new string[2];
       string coordinates2;
       int[,] matrix = new int[n, m];
+      //int[] matrix2 = new int[b*m];
+      string[,] impresionmatrix = new string[n, m];
+      int mostrar_aleatorios=0;
       Random rand = new Random();
 
       int aleatorio=0;
@@ -40,33 +43,56 @@ namespace casting
               matrix[i, j] = num;
             }
           }
+          for (int i = 0; i < n; i++)
+          {
+            for (int j = 0; j < m; j++)
+            {
+              impresionmatrix[i,j]="       ";
+            }
+          }
           game=2;
           pairs =0;
         } while (game==1);
         while (game==2)
         {
           Console.WriteLine("aqui va eljuego");
-          printmatrix(matrix,n,m);
+          if (mostrar_aleatorios==0)
+          {
+            printmatrix(matrix,n,m);
+          }
+          printmatrix(impresionmatrix,n,m);
           do
           {
             for (int i = 0; i < 2; i++)
             {
               do{
-                Console.WriteLine("coordenadas del onjetivo "+ (i+1)+" en forjato\"(x,y)\"");
+                Console.WriteLine("coordenadas del objetivo "+ (i+1)+" en formato\"(x,y)\"");
                 coordinates1[i]=Console.ReadLine();
-                //coordinates1[i]=",,,,,";
+                //coordinates1[i]="(2,4)";
                 //int a=1;
-              } while (verificar_coordenadas(coordinates1[i])==false);
+                if (numerico(matrix,coordinates1[i])>9)
+                {
+                  impresionmatrix[coordenadax(coordinates1[i]),coordenaday(coordinates1[i])]="  "+ numerico(matrix,coordinates1[i])+"   ";
+                  printmatrix(impresionmatrix,n,m);
+                }else
+                {
+                  impresionmatrix[coordenadax(coordinates1[i]),coordenaday(coordinates1[i])]="   "+ numerico(matrix,coordinates1[i])+"   ";
+                  printmatrix(impresionmatrix,n,m);
+                }
+              } while ((verificar_coordenadas(coordinates1[i])==false)||(verificar_limites(coordinates1[i],n,m)==false));
             }
-            /*do
-            {
-              Console.WriteLine("coordenadas del onjetivo 2");
-              coordinates2=Console.ReadLine();
-            } while (verificar_coordenadas(coordinates2)==false);*/
             verificar(matrix,coordinates1[0],coordinates1[1]);
             if (verificar(matrix,coordinates1[0],coordinates1[1])==true)
             {
+
               pairs++;
+            }else
+            {
+              for (int i = 0; i < 2; i++)
+              {
+                impresionmatrix[coordenadax(coordinates1[i]),coordenaday(coordinates1[i])]="       ";
+              }
+              printmatrix(impresionmatrix,n,m);
             }
           } while (finish(pairs)==false);
           
@@ -89,6 +115,7 @@ namespace casting
               matrix[i, j] = 0;
             }
           game=1;
+          mostrar_aleatorios=0;
         }
           Console.WriteLine("a jugar");
         }else if ( salida.ToLower() =="no")
@@ -119,6 +146,16 @@ namespace casting
         for (int j = 0; j < m; j++)
         {
           Console.Write(matrix[i, j] + " ");
+        }
+        Console.WriteLine();
+      }
+    }
+    static void printmatrix(string[,] matrix,int n, int m){
+      for (int i = 0; i < n; i++)
+      {
+        for (int j = 0; j < m; j++)
+        {
+          Console.Write("|"+matrix[i, j] + "|");
         }
         Console.WriteLine();
       }
@@ -251,6 +288,30 @@ namespace casting
       {
         return false;
       }
+    }
+    static bool verificar_limites(string coordenadas, int limite, int limite2){
+      int coodenada1 = (int)char.GetNumericValue(coordenadas[coordenadas.IndexOf(",")-1]);
+      int coodenada2 = (int)char.GetNumericValue(coordenadas[coordenadas.IndexOf(",")+1]);
+      if ((coodenada1<=limite)&&(coodenada1>0)&&(coodenada2>0)&&(coodenada2<=limite2))
+      {
+        return  true;
+      }else
+      {
+        return false;
+      }
+    }
+    static int numerico(int[,] matrix,string coordinates1){
+      int coodenada1 = (int)char.GetNumericValue(coordinates1[coordinates1.IndexOf(",")-1])-1;
+      int coodenada2 = (int)char.GetNumericValue(coordinates1[coordinates1.IndexOf(",")+1])-1;
+      return matrix[coodenada1,coodenada2];
+    }
+    static int coordenadax(string coordenadas){
+      int coodenada1 = (int)char.GetNumericValue(coordenadas[coordenadas.IndexOf(",")-1])-1;
+      return coodenada1;
+    }
+    static int coordenaday(string coordenadas){
+      int coodenada1 = (int)char.GetNumericValue(coordenadas[coordenadas.IndexOf(",")+1])-1;
+      return coodenada1;
     }
   }
 
