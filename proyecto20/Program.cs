@@ -9,24 +9,16 @@ namespace casting
   {
     static void Main(string[]args){
       int c=1;
-      int filas=4;
-      int columnas=7;
-      int activador_aleatorio=1;
-      int esatado=0;
       int n = 4;
       int m = 7;
       int game=0;
       int pairs=0;
       string [] coordinates1 = new string[2];
-      string coordinates2;
       int[,] matrix = new int[n, m];
       int[] matrix2 = new int[n*m];
       string[,] valores_impresion = new string[n+1,m+1];
       string[,] impresionmatrix = new string[n, m];
-      int mostrar_aleatorios=0;
       Random rand = new Random();
-
-      int aleatorio=0;
       while (c==1)
       {
         string salida="  ";
@@ -206,6 +198,7 @@ namespace casting
         Console.BackgroundColor=ConsoleColor.Black;
         Console.ForegroundColor=ConsoleColor.White;
         Thread.Sleep(5000);
+        
         salida =Console.ReadLine();
         if ( salida.ToLower() =="si")
         {
@@ -215,7 +208,6 @@ namespace casting
               matrix[i, j] = 0;
             }
           game=1;
-          mostrar_aleatorios=0;
         }
         for (int j = 0; j < (n*m); j++) {
               matrix2[j] = 0;
