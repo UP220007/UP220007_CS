@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 //matriz random llenada aleatoriamente sin repetir daros 
 namespace casting
 {
@@ -20,7 +21,8 @@ namespace casting
       string [] coordinates1 = new string[2];
       string coordinates2;
       int[,] matrix = new int[n, m];
-      //int[] matrix2 = new int[b*m];
+      int[] matrix2 = new int[n*m];
+      string[,] valores_impresion = new string[n+1,m+1];
       string[,] impresionmatrix = new string[n, m];
       int mostrar_aleatorios=0;
       Random rand = new Random();
@@ -50,6 +52,23 @@ namespace casting
               impresionmatrix[i,j]="       ";
             }
           }
+          for (int i = 0; i < (n+1); i++)
+          {
+            for (int j = 0; j < (m+1); j++)
+            {
+              if (i==0)
+              {
+                valores_impresion[i,j]="   "+j+"   ";
+              }else if (j==0 && i>0)
+              {
+                valores_impresion[i,j]="   "+i+"   ";
+              }else
+              {
+                valores_impresion[i,j]="       ";
+              }
+            }
+          }
+          //printmatrix(valores_impresion,n+1,m+1);
           game=2;
           pairs =0;
         } while (game==1);
@@ -58,41 +77,72 @@ namespace casting
           Console.WriteLine("aqui va eljuego");
           if (mostrar_aleatorios==0)
           {
-            printmatrix(matrix,n,m);
+            //printmatrix(matrix,n,m);
           }
-          printmatrix(impresionmatrix,n,m);
+          //printmatrix(valores_impresion,n+1,m+1);
           do
           {
             for (int i = 0; i < 2; i++)
             {
               do{
-                Console.WriteLine("coordenadas del objetivo "+ (i+1)+" en formato\"(x,y)\"");
+                Console.WriteLine("ENCUENTRA LA PAREJA DE NUMEROS QUE SUMADOS DEN COMO RESULTADO\"29\"");
+                printmatrix(valores_impresion,n+1,m+1);
+                Console.WriteLine("coordenadas del objetivo "+ (i+1)+" en formato\"(y,X)\"");
                 coordinates1[i]=Console.ReadLine();
-                //coordinates1[i]="(2,4)";
+                //coordinates1[i]="(1,4)";
                 //int a=1;
-                if (numerico(matrix,coordinates1[i])>9)
+                if((verificar_coordenadas(coordinates1[i])==true)&&(verificar_limites(coordinates1[i],n,m)==true)&&(coordinates1[0]!=coordinates1[1]))
                 {
-                  impresionmatrix[coordenadax(coordinates1[i]),coordenaday(coordinates1[i])]="  "+ numerico(matrix,coordinates1[i])+"   ";
-                  printmatrix(impresionmatrix,n,m);
-                }else
-                {
-                  impresionmatrix[coordenadax(coordinates1[i]),coordenaday(coordinates1[i])]="   "+ numerico(matrix,coordinates1[i])+"   ";
-                  printmatrix(impresionmatrix,n,m);
+                  if (numerico(matrix,coordinates1[i])>9)
+                  {
+                    valores_impresion[coordenadax(coordinates1[i])+1,coordenaday(coordinates1[i])+1]="  "+ numerico(matrix,coordinates1[i])+"   ";
+                    printmatrix(valores_impresion,n+1,m+1);
+                    Thread.Sleep(5000);
+                  }else
+                  {
+                    valores_impresion[coordenadax(coordinates1[i])+1,coordenaday(coordinates1[i])+1]="   "+ numerico(matrix,coordinates1[i])+"   ";
+                    printmatrix(valores_impresion,n+1,m+1);
+                    Thread.Sleep(5000);
+                  }
                 }
-              } while ((verificar_coordenadas(coordinates1[i])==false)||(verificar_limites(coordinates1[i],n,m)==false));
+              } while ((verificar_coordenadas(coordinates1[i])==false)||(verificar_limites(coordinates1[i],n,m)==false)||(coordinates1[0]==coordinates1[1]));
             }
-            verificar(matrix,coordinates1[0],coordinates1[1]);
+            //verificar(matrix,coordinates1[0],coordinates1[1]);
             if (verificar(matrix,coordinates1[0],coordinates1[1])==true)
             {
-
-              pairs++;
+              for (int i = 0; i < 2; i++)
+              {
+                if (pairs==0||pairs==1)
+                {
+                  matrix2[pairs]=numerico(matrix,coordinates1[i]);
+                  pairs++;
+                }else if (pairs>1)
+                {
+                  if (verificar_encontrados(matrix2,pairs,numerico(matrix,coordinates1[i]))==false)
+                  {
+                    matrix2[pairs]=numerico(matrix,coordinates1[i]);
+                    pairs++;
+                  }
+                }
+              }
+              /*for (int i = 0; i < pairs; i++)
+              {
+                Console.WriteLine(matrix2[i]);
+              }
+              Console.WriteLine(pairs);*/
             }else
             {
               for (int i = 0; i < 2; i++)
               {
-                impresionmatrix[coordenadax(coordinates1[i]),coordenaday(coordinates1[i])]="       ";
+                if (verificar_encontrados(matrix2,pairs,numerico(matrix,coordinates1[i]))==true)
+                {
+                  
+                }else
+                {
+                  valores_impresion[coordenadax(coordinates1[i])+1,coordenaday(coordinates1[i])+1]="       ";
+                }
               }
-              printmatrix(impresionmatrix,n,m);
+              printmatrix(valores_impresion,n+1,m+1);
             }
           } while (finish(pairs)==false);
           
@@ -101,27 +151,150 @@ namespace casting
         while (game==3)
         {
           Console.WriteLine("aqui se da el resultado de victoria");
+          Console.Clear();
+          Console.BackgroundColor=ConsoleColor.Black;
+          Console.ForegroundColor=ConsoleColor.White;
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.ForegroundColor=ConsoleColor.Black;
+          Console.BackgroundColor=ConsoleColor.Yellow;
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("        ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄             ");
+          Console.WriteLine("       ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌            ");
+          Console.WriteLine("       ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌           ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀             ");
+          Console.WriteLine("       ▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌               ▐░▌     ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌                      ");
+          Console.WriteLine("       ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌               ▐░▌     ▐░▌               ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄             ");
+          Console.WriteLine("       ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌               ▐░▌     ▐░▌               ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌            ");
+          Console.WriteLine("       ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌               ▐░▌     ▐░▌               ▐░▌     ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀█░▌            ");
+          Console.WriteLine("       ▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌               ▐░▌     ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌                    ▐░▌            ");
+          Console.WriteLine("       ▐░▌          ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄█░▌            ");
+          Console.WriteLine("       ▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌            ");
+          Console.WriteLine("        ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀   ▀         ▀  ▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀             ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("        ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄                                  ");
+          Console.WriteLine("       ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌                                 ");
+          Console.WriteLine("       ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌                                 ");
+          Console.WriteLine("       ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌       ▐░▌▐░▌▐░▌    ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌                                 ");
+          Console.WriteLine("       ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░▌ ▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▌   ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌       ▐░▌                                 ");
+          Console.WriteLine("       ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌▐░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌                                 ");
+          Console.WriteLine("       ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌     ▐░▌ ▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▐░▌ ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░▌       ▐░▌                                 ");
+          Console.WriteLine("       ▐░▌       ▐░▌▐░▌       ▐░▌          ▐░▌     ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌    ▐░▌▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌                                 ");
+          Console.WriteLine("       ▐░▌       ▐░▌▐░▌       ▐░▌ ▄▄▄▄▄▄▄▄▄█░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌     ▐░▐░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌                                 ");
+          Console.WriteLine("       ▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌      ▐░░▌▐░▌       ▐░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌                                 ");
+          Console.WriteLine("        ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀        ▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀                                  ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.WriteLine("                                                                                                                                                                  ");
+          Console.BackgroundColor=ConsoleColor.Black;
+          Console.ForegroundColor=ConsoleColor.White;
+          Thread.Sleep(10000);
           game=0;
         }
-        printmatrix(matrix,n,m);
-
+        //printmatrix(matrix,n,m);
         Console.WriteLine("Deseas volver a jugar ?");
+        Console.Clear();
+        Console.BackgroundColor=ConsoleColor.Black;
+        Console.ForegroundColor=ConsoleColor.White;
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.BackgroundColor=ConsoleColor.DarkCyan;
+        Console.ForegroundColor=ConsoleColor.Black;
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.WriteLine("        ________  _______   ________  _______   ________  ________           ___      ___ ________  ___       ___      ___ _______   ________                       ");
+        Console.WriteLine("       | \\   ___  \\| \\  ___  \\ | \\   ____ \\| \\  ___  \\ | \\   __   \\| \\   ____ \\         | \\   \\    /  /| \\   __   \\| \\   \\     | \\   \\    /  /| \\  ___  \\ | \\   __   \\                      ");
+        Console.WriteLine("        \\  \\   \\_| \\  \\  \\   __/| \\  \\   \\___| \\  \\   __/| \\  \\   \\| \\   \\  \\   \\___|_         \\  \\   \\  /  / |  \\   \\| \\   \\  \\   \\     \\  \\   \\  /  / |  \\   __/| \\  \\   \\| \\   \\                     ");
+        Console.WriteLine("         \\  \\   \\  \\ \\  \\  \\   \\_|/_ \\  \\_____   \\  \\   \\_|/_ \\  \\   __   \\  \\_____   \\         \\  \\   \\/  / /  \\  \\   \\ \\ \\   \\  \\   \\     \\  \\   \\/  / /  \\  \\   \\_|/_ \\  \\   _  _ \\                    ");
+        Console.WriteLine("          \\  \\   \\_ \\ \\  \\  \\   \\_| \\  \\|____| \\   \\  \\   \\_| \\  \\  \\   \\  \\   \\|____| \\   \\         \\  \\    / /    \\  \\   \\ \\ \\   \\  \\   \\____ \\  \\    / /    \\  \\   \\_| \\  \\  \\   \\ \\   \\|                   ");
+        Console.WriteLine("           \\  \\_______ \\  \\_______ \\____ \\_ \\   \\  \\_______ \\  \\__ \\  \\__ \\____ \\_ \\   \\         \\  \\__/ /      \\  \\_______ \\  \\_______ \\  \\__/ /      \\  \\_______ \\  \\__ \\ \\ _ \\                   ");
+        Console.WriteLine("            \\|_______| \\|_______| \\_________ \\|_______| \\|__| \\|__| \\_________ \\         \\|__|/        \\|_______| \\|_______| \\|__|/        \\|_______| \\|__| \\|__|                  ");
+        Console.WriteLine("                               \\|_________|                   \\|_________|                                                                                            ");
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.WriteLine("                     ________             ___  ___  ___  ________  ________  ________  ________           ________  ___          ___ ________   ________            ");
+        Console.WriteLine("                    | \\   __   \\           | \\   \\| \\   \\| \\   \\| \\   ____ \\| \\   __   \\| \\   __   \\| \\_____   \\         | \\   ____ \\| \\   \\        /  /| \\   ___   \\| \\   __   \\           ");
+        Console.WriteLine("                     \\  \\   \\| \\   \\           \\  \\   \\  \\   \\ \\ \\   \\  \\   \\___| \\  \\   \\| \\   \\  \\   \\| \\   \\|____| \\   \\         \\  \\   \\___| \\  \\   \\      /  // \\  \\   \\ \\  \\   \\  \\   \\| \\   \\          ");
+        Console.WriteLine("                      \\  \\   __   \\       __  \\  \\   \\  \\   \\ \\ \\   \\  \\   \\  __ \\  \\   __   \\  \\   _  _ \\     \\  \\__ \\         \\  \\_____   \\  \\   \\    /  //   \\  \\   \\ \\  \\   \\  \\   \\ \\ \\   \\         ");
+        Console.WriteLine("                       \\  \\   \\  \\   \\     | \\   \\ \\_ \\   \\  \\   \\ \\ \\   \\  \\   \\| \\   \\  \\   \\  \\   \\  \\   \\ \\   \\|     \\|__|          \\|____| \\   \\  \\   \\  /  //     \\  \\   \\ \\  \\   \\  \\   \\ \\ \\   \\        ");
+        Console.WriteLine("                        \\  \\__ \\  \\__ \\     \\  \\________ \\  \\_______ \\  \\_______ \\  \\__ \\  \\__ \\  \\__ \\ \\ _ \\        ___         ____ \\_ \\   \\  \\__ \\/_ //       \\  \\__ \\ \\  \\__ \\  \\_______ \\       ");
+        Console.WriteLine("                         \\|__| \\|__|      \\|________| \\|_______| \\|_______| \\|__| \\|__| \\|__| \\|__|      | \\__ \\       | \\_________ \\|__|__|/         \\|__|  \\|__| \\|_______|       ");
+        Console.WriteLine("                                                                                                 \\|__|        \\|_________|                                            ");
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.WriteLine("                                                                                                                                                                    ");
+        Console.BackgroundColor=ConsoleColor.Black;
+        Console.ForegroundColor=ConsoleColor.White;
+        Thread.Sleep(5000);
         salida =Console.ReadLine();
         if ( salida.ToLower() =="si")
         {
           c=1;
-          for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 7; j++) {
+          for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
               matrix[i, j] = 0;
             }
           game=1;
           mostrar_aleatorios=0;
         }
+        for (int j = 0; j < (n*m); j++) {
+              matrix2[j] = 0;
+            }
           Console.WriteLine("a jugar");
+          Console.Clear();
+          Console.BackgroundColor=ConsoleColor.Black;
+          Console.ForegroundColor=ConsoleColor.White;
+          Console.WriteLine("                                                                                                                    ");
+          Console.WriteLine("                                                                                                                    ");
+          Console.ForegroundColor=ConsoleColor.Black;
+          Console.BackgroundColor=ConsoleColor.Magenta;
+          Console.WriteLine("                                                                                                                    ");
+            Console.WriteLine("                                                                                                                    ");
+            Console.WriteLine("                _                        _      _                  _              _                   _             ");
+            Console.WriteLine("               / / \\                     / \\  \\   / \\_ \\               / \\  \\           / / \\                / \\  \\           ");
+            Console.WriteLine("              / /   \\                     \\  \\  \\ / / /         _    /   \\  \\         / /   \\              /   \\  \\          ");
+            Console.WriteLine("             / / / \\  \\                   / \\  \\_ \\ \\  \\  \\__      / \\_ \\ / / \\  \\_ \\       / / / \\  \\            / / \\  \\  \\         ");
+            Console.WriteLine("            / / / \\  \\  \\                 / / \\/_/  \\  \\___ \\    / / // / / \\/_/      / / / \\  \\  \\          / / / \\  \\_ \\        ");
+            Console.WriteLine("           / / /   \\  \\  \\       _       / / /      \\__  /   / / // / / ______   / / /   \\  \\  \\        / / /_/ / /        ");
+            Console.WriteLine("          / / /___/ / \\  \\     / \\  \\    / / /      / / /   / / // / / / \\_____ \\ / / /___/ / \\  \\      / / /__ \\/ /         ");
+            Console.WriteLine("         / / /_____/ / \\  \\     \\  \\_ \\  / / /      / / /   / / // / /   \\/____ // / /_____/ / \\  \\    / / /_____/          ");
+            Console.WriteLine("        / /_________/ \\  \\  \\   / / /_/ / /      / / /___/ / // / /_____/ / // /_________/ \\  \\  \\  / / / \\  \\  \\            ");
+            Console.WriteLine("       / / /_       __ \\  \\_ \\ / / /__ \\/ /      / / /____ \\/ // / /______ \\/ // / /_       __ \\  \\_ \\/ / /   \\  \\  \\           ");
+            Console.WriteLine("        \\_ \\___ \\     /____/_/  \\/_______/        \\/_________/  \\/___________/  \\_ \\___ \\     /____/_/ \\/_/     \\_ \\/           ");
+            Console.WriteLine("                                                                                                                    ");
+            Console.WriteLine("                                                                                                                    ");
+            Console.BackgroundColor=ConsoleColor.Black;
+          Console.ForegroundColor=ConsoleColor.White;
         }else if ( salida.ToLower() =="no")
         {
           c=0;
           Console.WriteLine("adios");
+          Console.Clear();
+          Console.BackgroundColor=ConsoleColor.Black;
+          Console.ForegroundColor=ConsoleColor.White;
+          Console.WriteLine("                                                                                                                  ");
+          Console.WriteLine("                                                                                                                  ");
+          Console.BackgroundColor=ConsoleColor.Cyan;
+          Console.ForegroundColor=ConsoleColor.Black;
+          Console.WriteLine("                                                                                                                  ");
+          Console.WriteLine("                                                                                                                  ");
+          Console.WriteLine("        .----------------.  .----------------.  .----------------.  .----------------.  .----------------.        ");
+          Console.WriteLine("       | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |       ");
+          Console.WriteLine("       | |      __      | || |  ________    | || |     _____    | || |     ____     | || |    _______   | |       ");
+          Console.WriteLine("       | |     /   \\     | || | |_   ___ `.  | || |    |_   _|   | || |   .'    `.   | || |   /  ___  |  | |       ");
+          Console.WriteLine("       | |    / / \\  \\    | || |   | |   `.  \\ | || |      | |     | || |  /  .--.   \\  | || |  |  (__  \\_|  | |       ");
+          Console.WriteLine("       | |   / ____  \\   | || |   | |    | | | || |      | |     | || |  | |    | |  | || |   '.___`-.   | |       ");
+          Console.WriteLine("       | | _/ /     \\  \\_ | || |  _| |___.' / | || |     _| |_    | || |   \\  `--'  /  | || |  |` \\____) |  | |       ");
+          Console.WriteLine("       | ||____|  |____|| || | |________.'  | || |    |_____|   | || |   `.____.'   | || |  |_______.'  | |       ");
+          Console.WriteLine("       | |              | || |              | || |              | || |              | || |              | |       ");
+          Console.WriteLine("       | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |       ");
+          Console.WriteLine("        '----------------'  '----------------'  '----------------'  '----------------'  '----------------'        ");
+          Console.WriteLine("                                                                                                                  ");
+          Console.WriteLine("                                                                                                                  ");
+          Console.BackgroundColor=ConsoleColor.Black;
+          Console.ForegroundColor=ConsoleColor.White;
+          Thread.Sleep(10000);
+          Console.Clear();
         }
       }
       Console.Read();
@@ -141,6 +314,17 @@ namespace casting
       return false;
     }
     static void printmatrix(int[,] matrix,int n, int m){
+      Console.WriteLine("                                                                              ");
+      Console.WriteLine(" ███▄ ▄███▓▓█████  ███▄ ▄███▓ ▒█████   ██▀███   ▄▄▄       ███▄ ▄███▓ ▄▄▄      ");
+      Console.WriteLine("▓██▒▀█▀ ██▒▓█   ▀ ▓██▒▀█▀ ██▒▒██▒  ██▒▓██ ▒ ██▒▒████▄    ▓██▒▀█▀ ██▒▒████▄    ");
+      Console.WriteLine("▓██    ▓██░▒███   ▓██    ▓██░▒██░  ██▒▓██ ░▄█ ▒▒██  ▀█▄  ▓██    ▓██░▒██  ▀█▄  ");
+      Console.WriteLine("▒██    ▒██ ▒▓█  ▄ ▒██    ▒██ ▒██   ██░▒██▀▀█▄  ░██▄▄▄▄██ ▒██    ▒██ ░██▄▄▄▄██ ");
+      Console.WriteLine("▒██▒   ░██▒░▒████▒▒██▒   ░██▒░ ████▓▒░░██▓ ▒██▒ ▓█   ▓██▒▒██▒   ░██▒ ▓█   ▓██▒");
+      Console.WriteLine("░ ▒░   ░  ░░░ ▒░ ░░ ▒░   ░  ░░ ▒░▒░▒░ ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ▒░   ░  ░ ▒▒   ▓▒█░");
+      Console.WriteLine("░  ░      ░ ░ ░  ░░  ░      ░  ░ ▒ ▒░   ░▒ ░ ▒░  ▒   ▒▒ ░░  ░      ░  ▒   ▒▒ ░");
+      Console.WriteLine("░      ░      ░   ░      ░   ░ ░ ░ ▒    ░░   ░   ░   ▒   ░      ░     ░   ▒   ");
+      Console.WriteLine("       ░      ░  ░       ░       ░ ░     ░           ░  ░       ░         ░  ░");
+      Console.WriteLine("                                                                              ");
       for (int i = 0; i < n; i++)
       {
         for (int j = 0; j < m; j++)
@@ -151,14 +335,54 @@ namespace casting
       }
     }
     static void printmatrix(string[,] matrix,int n, int m){
+      Console.Clear();
+      Console.BackgroundColor=ConsoleColor.Black;
+      Console.ForegroundColor=ConsoleColor.White;
+      Console.WriteLine("ENCUENTRA LA PAREJA DE NUMEROS QUE SUMADOS DEN COMO RESULTADO\"29\"");
+      Console.ForegroundColor=ConsoleColor.Black;
+      Console.BackgroundColor=ConsoleColor.Yellow;
+      Console.WriteLine("                                                                                            ");
+      Console.WriteLine("                                                                                            ");
+      Console.WriteLine("        ███▄ ▄███▓▓█████  ███▄ ▄███▓ ▒█████   ██▀███   ▄▄▄       ███▄ ▄███▓ ▄▄▄             ");
+      Console.WriteLine("       ▓██▒▀█▀ ██▒▓█   ▀ ▓██▒▀█▀ ██▒▒██▒  ██▒▓██ ▒ ██▒▒████▄    ▓██▒▀█▀ ██▒▒████▄           ");
+      Console.WriteLine("       ▓██    ▓██░▒███   ▓██    ▓██░▒██░  ██▒▓██ ░▄█ ▒▒██  ▀█▄  ▓██    ▓██░▒██  ▀█▄         ");
+      Console.WriteLine("       ▒██    ▒██ ▒▓█  ▄ ▒██    ▒██ ▒██   ██░▒██▀▀█▄  ░██▄▄▄▄██ ▒██    ▒██ ░██▄▄▄▄██        ");
+      Console.WriteLine("       ▒██▒   ░██▒░▒████▒▒██▒   ░██▒░ ████▓▒░░██▓ ▒██▒ ▓█   ▓██▒▒██▒   ░██▒ ▓█   ▓██▒       ");
+      Console.WriteLine("       ░ ▒░   ░  ░░░ ▒░ ░░ ▒░   ░  ░░ ▒░▒░▒░ ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ▒░   ░  ░ ▒▒   ▓▒█░       ");
+      Console.WriteLine("       ░  ░      ░ ░ ░  ░░  ░      ░  ░ ▒ ▒░   ░▒ ░ ▒░  ▒   ▒▒ ░░  ░      ░  ▒   ▒▒ ░       ");
+      Console.WriteLine("       ░      ░      ░   ░      ░   ░ ░ ░ ▒    ░░   ░   ░   ▒   ░      ░     ░   ▒          ");
+      Console.WriteLine("              ░      ░  ░       ░       ░ ░     ░           ░  ░       ░         ░  ░       ");
+      Console.WriteLine("                                                                                            ");
+      Console.WriteLine("                                                                                            ");
+      Console.BackgroundColor=ConsoleColor.Black;
       for (int i = 0; i < n; i++)
       {
+        Console.BackgroundColor=ConsoleColor.Black;
+        Console.Write("       ");
         for (int j = 0; j < m; j++)
         {
-          Console.Write("|"+matrix[i, j] + "|");
+          if (i==0)
+          {
+            Console.BackgroundColor=ConsoleColor.Green;
+            Console.Write("|"+matrix[i, j] + "|");
+          }else if (j==0 && i>0)
+          {
+            Console.BackgroundColor=ConsoleColor.Green;
+            Console.Write("|"+matrix[i, j] + "|");
+          }else if(j!=0 && i>0 && matrix[i, j]!="       ")
+          {
+            Console.BackgroundColor=ConsoleColor.Blue;
+            Console.Write("|"+matrix[i, j] + "|");
+          }else if(j!=0 && i>0 && matrix[i, j]=="       ")
+          {
+            Console.BackgroundColor=ConsoleColor.White;
+            Console.Write("|"+matrix[i, j] + "|");
+          }
         }
         Console.WriteLine();
       }
+      Console.BackgroundColor=ConsoleColor.Black;
+      Console.ForegroundColor=ConsoleColor.White;
     }
     static bool verificar (int[,] matrix,string coordinates1,string coordinates2){
       int coodenada1 = (int)char.GetNumericValue(coordinates1[coordinates1.IndexOf(",")-1])-1;
@@ -167,15 +391,15 @@ namespace casting
       int coodenada4 = (int)char.GetNumericValue(coordinates2[coordinates2.IndexOf(",")+1])-1;
       if ((matrix[coodenada1,coodenada2] + matrix[coodenada3,coodenada4])==29)
       {
-        Console.WriteLine("coincidencia");
+        //Console.WriteLine("coincidencia");
         return true;
       }else{
-        Console.WriteLine("error");
+        //Console.WriteLine("error");
         return false;
       }
     }
     static bool finish(int pairs){
-      if (pairs==29)
+      if (pairs==28)
       {
         return true;
       }else
@@ -312,6 +536,17 @@ namespace casting
     static int coordenaday(string coordenadas){
       int coodenada1 = (int)char.GetNumericValue(coordenadas[coordenadas.IndexOf(",")+1])-1;
       return coodenada1;
+    }
+    static bool verificar_encontrados(int[] encontrados,int pairs,int numero)
+    {
+      for (int i = 0; i < pairs; i++)
+      {
+        if (numero==encontrados[i])
+        {
+          return true;
+        }
+      }
+      return false;
     }
   }
 
