@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-//matriz random llenada aleatoriamente sin repetir daros 
 namespace casting
 {
   class Program
@@ -68,29 +67,19 @@ namespace casting
               }
             }
           }
-          //printmatrix(valores_impresion,n+1,m+1);
           game=2;
           pairs =0;
         } while (game==1);
         while (game==2)
         {
-          Console.WriteLine("aqui va eljuego");
-          if (mostrar_aleatorios==0)
-          {
-            //printmatrix(matrix,n,m);
-          }
-          //printmatrix(valores_impresion,n+1,m+1);
           do
           {
             for (int i = 0; i < 2; i++)
             {
               do{
-                Console.WriteLine("ENCUENTRA LA PAREJA DE NUMEROS QUE SUMADOS DEN COMO RESULTADO\"29\"");
                 printmatrix(valores_impresion,n+1,m+1);
                 Console.WriteLine("coordenadas del objetivo "+ (i+1)+" en formato\"(y,X)\"");
                 coordinates1[i]=Console.ReadLine();
-                //coordinates1[i]="(1,4)";
-                //int a=1;
                 if((verificar_coordenadas(coordinates1[i])==true)&&(verificar_limites(coordinates1[i],n,m)==true)&&(coordinates1[0]!=coordinates1[1]))
                 {
                   if (numerico(matrix,coordinates1[i])>9)
@@ -107,7 +96,6 @@ namespace casting
                 }
               } while ((verificar_coordenadas(coordinates1[i])==false)||(verificar_limites(coordinates1[i],n,m)==false)||(coordinates1[0]==coordinates1[1]));
             }
-            //verificar(matrix,coordinates1[0],coordinates1[1]);
             if (verificar(matrix,coordinates1[0],coordinates1[1])==true)
             {
               for (int i = 0; i < 2; i++)
@@ -125,11 +113,6 @@ namespace casting
                   }
                 }
               }
-              /*for (int i = 0; i < pairs; i++)
-              {
-                Console.WriteLine(matrix2[i]);
-              }
-              Console.WriteLine(pairs);*/
             }else
             {
               for (int i = 0; i < 2; i++)
@@ -150,7 +133,6 @@ namespace casting
         }
         while (game==3)
         {
-          Console.WriteLine("aqui se da el resultado de victoria");
           Console.Clear();
           Console.BackgroundColor=ConsoleColor.Black;
           Console.ForegroundColor=ConsoleColor.White;
@@ -192,8 +174,6 @@ namespace casting
           Thread.Sleep(10000);
           game=0;
         }
-        //printmatrix(matrix,n,m);
-        Console.WriteLine("Deseas volver a jugar ?");
         Console.Clear();
         Console.BackgroundColor=ConsoleColor.Black;
         Console.ForegroundColor=ConsoleColor.White;
@@ -240,7 +220,6 @@ namespace casting
         for (int j = 0; j < (n*m); j++) {
               matrix2[j] = 0;
             }
-          Console.WriteLine("a jugar");
           Console.Clear();
           Console.BackgroundColor=ConsoleColor.Black;
           Console.ForegroundColor=ConsoleColor.White;
@@ -268,7 +247,6 @@ namespace casting
         }else if ( salida.ToLower() =="no")
         {
           c=0;
-          Console.WriteLine("adios");
           Console.Clear();
           Console.BackgroundColor=ConsoleColor.Black;
           Console.ForegroundColor=ConsoleColor.White;
@@ -391,10 +369,8 @@ namespace casting
       int coodenada4 = (int)char.GetNumericValue(coordinates2[coordinates2.IndexOf(",")+1])-1;
       if ((matrix[coodenada1,coodenada2] + matrix[coodenada3,coodenada4])==29)
       {
-        //Console.WriteLine("coincidencia");
         return true;
       }else{
-        //Console.WriteLine("error");
         return false;
       }
     }
@@ -435,25 +411,6 @@ namespace casting
       }
     }
     static bool coordenadas_recorrer(string coordinates1){
-      /*int contador =0;
-      string bloqueos = "qwertyuiopasdfghjklñzxcvbnm<.-{}+´¿'!#$%&/=?¡¨*[]:_;QWERTYUIOPASDFGHJKLÑZ>XCVBNM<^`~\"\\";
-      for (int i = 0; i <= coordinates1.Length; i++)
-      {
-        for (int j = 0; j <= bloqueos.Length; j++)
-        {
-          if (coordinates1[i]!=bloqueos[j])
-          {
-            contador++;
-          }
-        }
-      }
-      if (contador==coordinates1.Length)
-      {
-        return true;
-      }else
-      {
-        return false;
-      }*/
       string input = "123,456(789)";
       bool valid = true;
       for (int i = 0; i < coordinates1.Length; i++)
@@ -476,10 +433,9 @@ namespace casting
     }
     static bool verificar_formato(string coordenadas){
       char a= coordenadas[coordenadas.IndexOf(",")-1];
-      char b= coordenadas[coordenadas.IndexOf(",")+1];//desborde
+      char b= coordenadas[coordenadas.IndexOf(",")+1];
       char c= coordenadas[0];
       char d= coordenadas[4];
-      //Console.WriteLine(a+" "+b+" "+c+" "+d);
       if (char.IsDigit(a)&&char.IsDigit(b)&&c=='('&&d==')')
       {
         return true;
@@ -549,5 +505,4 @@ namespace casting
       return false;
     }
   }
-
 }
