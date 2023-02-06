@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\bin\Debug\net7.0\proyecto22.exe
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\bin\Debug\net7.0\proyecto22.deps.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\bin\Debug\net7.0\proyecto22.runtimeconfig.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\bin\Debug\net7.0\proyecto22.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\bin\Debug\net7.0\proyecto22.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\refint\proyecto22.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\proyecto22.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto22\obj\Debug\net7.0\ref\proyecto22.dll

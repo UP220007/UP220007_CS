@@ -1,0 +1,15 @@
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\bin\Debug\net7.0\proyecto20.exe
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\bin\Debug\net7.0\proyecto20.deps.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\bin\Debug\net7.0\proyecto20.runtimeconfig.json
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\bin\Debug\net7.0\proyecto20.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\bin\Debug\net7.0\proyecto20.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.csproj.AssemblyReference.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.AssemblyInfoInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.AssemblyInfo.cs
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.csproj.CoreCompileInputs.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\refint\proyecto20.dll
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.pdb
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\proyecto20.genruntimeconfig.cache
+C:\Users\range\Documents\vs code\UP220007_CS\proyecto20\obj\Debug\net7.0\ref\proyecto20.dll
